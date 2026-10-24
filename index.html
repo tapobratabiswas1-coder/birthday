@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="bn">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#170F12" />
+    <meta name="description" content="A handcrafted birthday gift." />
+    <title>Happy 21st Birthday ♥</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon"
+        href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🌹</text></svg>" />
+</head>
+
+<body>
+
+    <!-- =================== 1. COUNTDOWN PRELOADER =================== -->
+    <section id="preloader" class="preloader" aria-label="Opening scene">
+        <div class="preloader__stars" aria-hidden="true"></div>
+        <div class="preloader__glow" aria-hidden="true"></div>
+        <div class="preloader__frame">
+            <p class="preloader__intro" id="preloaderIntro">Someone very special is about to have her moment…</p>
+            <div class="clock" role="timer" aria-live="polite">
+                <span class="clock__time" id="clockTime">11:59:56</span>
+                <span class="clock__meridiem" id="clockMeridiem">PM</span>
+            </div>
+            <p class="preloader__hint" id="preloaderHint">a quiet midnight is on the way</p>
+        </div>
+        <div class="preloader__burst" id="preloaderBurst" aria-hidden="true"></div>
+    </section>
+
+    <!-- =================== 2. PASSWORD GATE =================== -->
+    <section id="gate" class="gate" aria-label="Password gate" hidden>
+        <div class="gate__vignette" aria-hidden="true"></div>
+        <div class="gate__panel">
+            <div class="lock" aria-hidden="true">
+                <div class="lock__shackle"></div>
+                <div class="lock__body">
+                    <div class="lock__keyhole"></div>
+                    <div class="lock__shine"></div>
+                </div>
+            </div>
+            <h1 class="gate__title">A little secret is waiting inside</h1>
+            <p class="gate__sub">কেবল তোমার জন্য — ছোট্ট একটা কোড দাও</p>
+            <form id="gateForm" class="gate__form" autocomplete="off" novalidate>
+                <label class="sr-only" for="gateInput">Password</label>
+                <input id="gateInput" class="gate__input" type="password" inputmode="numeric" maxlength="12"
+                    placeholder="• • • •" aria-describedby="gateError" />
+                <button id="gateBtn" class="btn btn--gold" type="submit">Unlock</button>
+            </form>
+            <p id="gateError" class="gate__error" role="alert" aria-live="polite"></p>
+            <p class="gate__whisper">↵ Enter দিলেই খুলবে</p>
+        </div>
+    </section>
+
+    <!-- =================== MAIN SITE =================== -->
+    <main id="site" class="site" hidden>
+
+        <!-- scroll progress -->
+        <div id="progress" class="progress" aria-hidden="true"><span></span></div>
+
+        <!-- decorative layers -->
+        <div id="petals" class="fx-layer" aria-hidden="true"></div>
+        <div id="trail" class="fx-layer" aria-hidden="true"></div>
+
+        <!-- =================== 3. HERO =================== -->
+        <header id="hero" class="hero section">
+            <div class="hero__inner">
+                <p class="eyebrow reveal" data-reveal>— ২১ শে জন্মদিন —</p>
+                <h1 class="hero__title reveal" data-reveal>
+                    শুভ জন্মদিন,
+                    <span class="hero__name" id="heroName">প্রিয়তমা</span>
+                </h1>
+                <div class="hero__numeral reveal" data-reveal aria-hidden="true">
+                    <span>2</span><span>1</span>
+                    <em class="hero__sparkle"></em>
+                </div>
+                <p class="hero__lede reveal" data-reveal id="heroLede">
+                    পৃথিবীর কাছে আজ হয়তো আর দশটা দিনের মতোই একটা দিন।
+                    কিন্তু আমার কাছে আজকের দিনটা আলাদা — কারণ আজকের দিনেই
+                    পৃথিবীতে এমন একজন এসেছিল, যাকে ছাড়া আমার দিনগুলো অন্যরকম হতো।
+                </p>
+                <a href="#letter" class="scroll-cue reveal" data-reveal aria-label="Scroll to begin">
+                    <span>scroll</span>
+                    <i class="scroll-cue__line"></i>
+                </a>
+            </div>
+            <div class="hero__glow" aria-hidden="true"></div>
+        </header>
+
+        <!-- =================== 4. LOVE LETTER =================== -->
+        <section id="letter" class="letter section section--paper">
+            <article class="paper reveal" data-reveal>
+                <div class="paper__corner paper__corner--tl"></div>
+                <div class="paper__corner paper__corner--tr"></div>
+                <div class="paper__corner paper__corner--bl"></div>
+                <div class="paper__corner paper__corner--br"></div>
+                <p class="paper__salute">প্রিয়তমা,</p>
+                <p>
+                    আজকের দিনটা তোমার, আর তোমার দিনটা আমার কাছে বছরের সবচেয়ে
+                    গুরুত্বপূর্ণ দিন। অনেক কিছু বলার থাকে, অনেক কিছু বলা হয়ে
+                    ওঠে না।
+                </p>
+                <p>
+                    তুমি হাসলে আমার ভেতরটা হালকা লাগে, তুমি চুপ করে থাকলে
+                    বুঝে যাই কিছু একটা হয়েছে, রাগ করো, অভিমান করো, তবু শেষমেশ
+                    আমার কাছেই ফিরে আসো।
+                </p>
+                <p>
+                    তুমি নিখুঁত নও, আমিও না, সম্পর্কটাও না — তবু এই এলোমেলো
+                    ছোট ছোট মুহূর্তগুলোকেই আমি সবচেয়ে বেশি ভালোবাসি।
+                </p>
+                <p>
+                    আজকের দিনে একটাই চাওয়া — ভালো থেকো, নিজের যত্ন নিও,
+                    নিজেকে ভালোবাসতে ভুলো না, আর মাঝেমধ্যে আমার কথাও মনে রেখো।
+                </p>
+                <p class="paper__sign">— তোমারই, <span class="js-sender">আমি</span></p>
+            </article>
+        </section>
+
+        <!-- =================== 5. 21 LITTLE THINGS =================== -->
+        <section id="things" class="things section">
+            <div class="section__head">
+                <p class="eyebrow">— একটা ছোট্ট তালিকা —</p>
+                <h2 class="section__title">তোমার ২১টা ছোট্ট কথা</h2>
+                <p class="section__sub">যেগুলো তোমাকে তুমি বানায়</p>
+            </div>
+            <ol id="thingsList" class="things__list" aria-label="21 little things"></ol>
+        </section>
+
+        <!-- =================== 6. SPIN WHEEL =================== -->
+        <section id="wheel" class="wheel section section--velvet">
+            <div class="section__head">
+                <p class="eyebrow eyebrow--gold">— একটু ভাগ্য দেখি —</p>
+                <h2 class="section__title">চাকাটা ঘুরিয়ে দাও</h2>
+                <p class="section__sub">যা আসবে, সেটাই আজকের জন্মদিনের উপহার 🎁</p>
+            </div>
+
+            <div class="wheel__stage">
+                <div class="wheel__pointer" aria-hidden="true"></div>
+                <div class="wheel__ring" aria-hidden="true"></div>
+                <div class="wheel__disc" id="wheelDisc" role="img" aria-label="Four-sector wheel">
+                    <ul class="wheel__labels" id="wheelLabels" aria-hidden="true"></ul>
+                </div>
+                <button id="spinBtn" class="wheel__hub" type="button" aria-label="Spin the wheel">
+                    <span>SPIN</span>
+                </button>
+            </div>
+
+            <p class="wheel__hint">মাঝের বোতামে চাপ দাও</p>
+        </section>
+
+        <!-- =================== 7. THREE MYSTERY GIFTS =================== -->
+        <section id="gifts" class="gifts section">
+            <div class="section__head">
+                <p class="eyebrow">— তিনটে ছোট্ট উপহার —</p>
+                <h2 class="section__title">কোনটা আগে খুলবে?</h2>
+                <p class="section__sub">যেকোনো একটা বাক্সে ছুঁয়ে দাও</p>
+            </div>
+
+            <div class="gifts__grid">
+                <button class="gift" data-gift="1" type="button" aria-label="A Little Love">
+                    <div class="gift__box">
+                        <div class="gift__lid"><span class="gift__bow"></span></div>
+                        <div class="gift__base"></div>
+                        <div class="gift__ribbonV"></div>
+                    </div>
+                    <span class="gift__label">A Little Love</span>
+                </button>
+
+                <button class="gift" data-gift="2" type="button" aria-label="Your Birthday Card">
+                    <div class="gift__box gift__box--rose">
+                        <div class="gift__lid"><span class="gift__bow"></span></div>
+                        <div class="gift__base"></div>
+                        <div class="gift__ribbonV"></div>
+                    </div>
+                    <span class="gift__label">Your Birthday Card</span>
+                </button>
+
+                <button class="gift" data-gift="3" type="button" aria-label="One Important Notice">
+                    <div class="gift__box gift__box--gold">
+                        <div class="gift__lid"><span class="gift__bow"></span></div>
+                        <div class="gift__base"></div>
+                        <div class="gift__ribbonV"></div>
+                    </div>
+                    <span class="gift__label">One Important Notice</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- =================== 8. CAKE =================== -->
+        <section id="cake" class="cake section section--paper">
+            <div class="section__head">
+                <p class="eyebrow">— ২১টা মোমবাতি —</p>
+                <h2 class="section__title">একটা wish করো</h2>
+                <p class="section__sub">candles-এ tap দাও</p>
+            </div>
+
+            <div class="cake__stage">
+                <div class="cake__shadow" aria-hidden="true"></div>
+
+                <div class="cake__piece" id="cakePiece" role="group" aria-label="Birthday cake">
+                    <!-- candles -->
+                    <div class="candles">
+                        <div class="candle candle--2">
+                            <div class="flame"></div>
+                            <div class="smoke" aria-hidden="true"></div>
+                            <div class="numeral">2</div>
+                        </div>
+                        <div class="candle candle--1">
+                            <div class="flame"></div>
+                            <div class="smoke" aria-hidden="true"></div>
+                            <div class="numeral">1</div>
+                        </div>
+                    </div>
+
+                    <!-- top tier -->
+                    <div class="cake__tier cake__tier--top">
+                        <div class="cake__drip"></div>
+                    </div>
+                    <!-- middle tier -->
+                    <div class="cake__tier cake__tier--mid">
+                        <div class="cake__drip"></div>
+                        <div class="cake__dots"></div>
+                    </div>
+                    <!-- bottom tier -->
+                    <div class="cake__tier cake__tier--bot">
+                        <div class="cake__drip"></div>
+                        <div class="cake__ribbon"></div>
+                    </div>
+                    <div class="cake__plate"></div>
+                </div>
+
+                <button id="blowBtn" class="btn btn--ghost" type="button">Candles নিভাও 🕯️</button>
+
+                <p id="cakeMsg" class="cake__msg" hidden></p>
+            </div>
+        </section>
+
+        <!-- =================== 9. OPEN WHEN LETTERS =================== -->
+        <section id="openwhen" class="openwhen section section--velvet">
+            <div class="section__head">
+                <p class="eyebrow eyebrow--gold">— তিনটে চিঠি —</p>
+                <h2 class="section__title">Open When…</h2>
+                <p class="section__sub">যখন দরকার, তখন খুলো</p>
+            </div>
+
+            <div class="envelopes">
+                <article class="env" data-env="1">
+                    <button class="env__flap" type="button" aria-expanded="false" aria-controls="env1body">
+                        <span class="env__seal" aria-hidden="true">♥</span>
+                        <span class="env__title">যখন মন খারাপ থাকবে</span>
+                        <span class="env__hint">tap to open</span>
+                    </button>
+                    <div id="env1body" class="env__body" hidden></div>
+                </article>
+
+                <article class="env" data-env="2">
+                    <button class="env__flap" type="button" aria-expanded="false" aria-controls="env2body">
+                        <span class="env__seal" aria-hidden="true">♥</span>
+                        <span class="env__title">যখন আমাকে মিস করবে</span>
+                        <span class="env__hint">tap to open</span>
+                    </button>
+                    <div id="env2body" class="env__body" hidden></div>
+                </article>
+
+                <article class="env" data-env="3">
+                    <button class="env__flap" type="button" aria-expanded="false" aria-controls="env3body">
+                        <span class="env__seal" aria-hidden="true">♥</span>
+                        <span class="env__title">যখন আমার উপর রাগ করবে</span>
+                        <span class="env__hint">tap to open</span>
+                    </button>
+                    <div id="env3body" class="env__body" hidden></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================== 10. MEMORY CORNER =================== -->
+        <section id="memory" class="memory section section--paper">
+            <div class="section__head">
+                <p class="eyebrow">— ছোট্ট কোণ —</p>
+                <h2 class="section__title">Memory Corner</h2>
+                <p class="section__sub">তিনটে ভাঁজ করা কাগজ, তিনটে ছোট্ট কথা</p>
+            </div>
+
+            <div class="folds">
+                <article class="fold" data-fold="1">
+                    <button class="fold__front" type="button" aria-expanded="false" aria-controls="fold1body">
+                        <span class="fold__no">০১</span>
+                        <span class="fold__title">সাধারণ মুহূর্তগুলো</span>
+                    </button>
+                    <div id="fold1body" class="fold__back" hidden></div>
+                </article>
+
+                <article class="fold" data-fold="2">
+                    <button class="fold__front" type="button" aria-expanded="false" aria-controls="fold2body">
+                        <span class="fold__no">০২</span>
+                        <span class="fold__title">যা বলা হয়নি কখনও</span>
+                    </button>
+                    <div id="fold2body" class="fold__back" hidden></div>
+                </article>
+
+                <article class="fold" data-fold="3">
+                    <button class="fold__front" type="button" aria-expanded="false" aria-controls="fold3body">
+                        <span class="fold__no">০৩</span>
+                        <span class="fold__title">আগামীর জন্য রাখা</span>
+                    </button>
+                    <div id="fold3body" class="fold__back" hidden></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- =================== 11. FINAL CLOSING =================== -->
+        <section id="final" class="final section">
+            <div class="final__glow" aria-hidden="true"></div>
+            <div class="final__inner">
+                <p class="eyebrow eyebrow--gold">— শেষ কথা —</p>
+                <h2 class="final__title">Happy 21<sup>st</sup> Birthday</h2>
+                <h3 class="final__name" id="finalName">প্রিয়তমা</h3>
+                <p class="final__msg">
+                    এটা বানিয়েছি কারণ তুমি আমার কাছে গুরুত্বপূর্ণ। চেয়েছিলাম
+                    তোমার জন্মদিনে এমন কিছু থাকুক, যেটা শুধু তোমার জন্য —
+                    একটু ঘেঁটে দেখবে, একটু হাসবে, আর কোথাও গিয়ে মনে রাখবে।
+                    তোমার ভালো থাকাটাই আমার কাছে সবচেয়ে বড় কথা।
+                </p>
+                <p class="final__sign">— <span class="js-sender">তোমারই</span></p>
+                <p class="final__detail">Made with love, just for you ♥</p>
+                <button id="toTopFinal" class="btn btn--gold" type="button">আবার শুরু থেকে দেখো</button>
+            </div>
+        </section>
+
+        <button id="toTop" class="to-top" type="button" aria-label="Back to top">↑</button>
+    </main>
+
+    <!-- =================== MODAL (shared) =================== -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="modal__backdrop" data-close="1"></div>
+        <div class="modal__card" role="document">
+            <button class="modal__close" type="button" data-close="1" aria-label="Close">×</button>
+            <h3 id="modalTitle" class="modal__title"></h3>
+            <div id="modalBody" class="modal__body"></div>
+        </div>
+    </div>
+
+    <!-- =================== WHEEL RESULT POPUP =================== -->
+    <div id="wheelPop" class="pop" role="dialog" aria-modal="true" aria-labelledby="wheelPopTitle" hidden>
+        <div class="pop__backdrop" data-close="1"></div>
+        <div class="pop__card">
+            <div class="pop__ring" aria-hidden="true"></div>
+            <p class="pop__eyebrow">চাকা বলেছে —</p>
+            <h3 id="wheelPopTitle" class="pop__title"></h3>
+            <p id="wheelPopMsg" class="pop__msg"></p>
+            <button class="btn btn--gold" type="button" data-close="1">বাহ্, বেশ!</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
