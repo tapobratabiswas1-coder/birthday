@@ -298,16 +298,16 @@ function buildWheelLabels() {
 
     if (!ul || !Array.isArray(opts) || opts.length !== 4) return;
 
-    // Prevent duplicate labels if this function is ever called again.
+    // Prevent duplicate labels if this function is called again.
     ul.replaceChildren();
 
     opts.forEach((opt, i) => {
         const li = document.createElement('li');
         const label = document.createElement('span');
 
-        // conic-gradient starts at 12 o'clock and moves clockwise.
-        // CSS rotate(0deg) points right, so labels need a -45deg offset.
-        const center = -45 + i * 90;
+        // The first sector's center is 45 degrees from 12 o'clock.
+        // CSS rotate() uses 0 degrees pointing right, so +45 is correct here.
+        const center = 45 + i * 90;
         li.style.transform = `rotate(${center}deg)`;
         label.textContent = opt.label;
         li.appendChild(label);
@@ -318,6 +318,34 @@ function buildWheelLabels() {
 let wheelSpinning = false;
 let wheelAngle = 0;
 
+let lastWheelChoice = null;
+
+function chooseWheelChoice() {
+    const count = CONFIG.wheelOptions.length;
+    if (!count) return 0;
+
+    // First spin: every prize has an equal 25% chance (with 4 prizes).
+    if (lastWheelChoice === null || count === 1) {
+        lastWheelChoice = Math.floor(Math.random() * count);
+        return lastWheelChoice;
+    }
+
+    // On every later spin, there is exactly a 20% chance to repeat
+    // the previous prize. Otherwise choose randomly from the other prizes.
+    if (Math.random() < 0.20) {
+        return lastWheelChoice;
+    }
+
+    const otherChoices = Array.from({ length: count }, (_, i) => i)
+        .filter(i => i !== lastWheelChoice);
+
+    lastWheelChoice = otherChoices[
+        Math.floor(Math.random() * otherChoices.length)
+    ];
+
+    return lastWheelChoice;
+}
+
 function bindWheel() {
     const disc = $('#wheelDisc');
     const btn = $('#spinBtn');
@@ -326,7 +354,7 @@ function bindWheel() {
         wheelSpinning = true;
         btn.disabled = true;
 
-        const choice = Math.floor(Math.random() * 4); // 0..3
+        const choice = chooseWheelChoice(); // 0..3
         // sectors go clockwise from 12 o'clock: let's compute carefully.
         // Pointer is at top (12 o'clock). Our conic-gradient starts at 0deg (top) and goes clockwise.
         // So sector i occupies [i*90, (i+1)*90] from the top, clockwise.
